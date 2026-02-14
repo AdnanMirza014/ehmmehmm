@@ -20,8 +20,8 @@
   }
 
   .card {
-    background: rgba(255,255,255,0.95);
-    padding: 40px 30px;
+    background: rgba(255,255,255,0.96);
+    padding: 35px 28px;
     width: 340px;
     border-radius: 24px;
     text-align: center;
@@ -39,7 +39,12 @@
   p {
     font-size: 14px;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+  }
+
+  .cat {
+    width: 140px;
+    margin: 10px auto 20px;
   }
 
   .buttons {
@@ -86,10 +91,6 @@
     from { transform: translateY(0); opacity: 1; }
     to { transform: translateY(-120vh); opacity: 0; }
   }
-
-  .blur {
-    filter: blur(2px);
-  }
 </style>
 </head>
 
@@ -101,7 +102,16 @@
 
 <div class="card" id="card">
   <h1 id="question"></h1>
-  <p>Be honest. Take your time.</p>
+
+  <!-- Cute Cat -->
+  <img
+    id="cat"
+    class="cat"
+    src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+    alt="cute cat"
+  />
+
+  <p>He’s rooting for you 👀</p>
 
   <div class="buttons">
     <button id="yes">Yes 💖</button>
@@ -115,6 +125,7 @@ const q = document.getElementById("question");
 const noBtn = document.getElementById("no");
 const yesBtn = document.getElementById("yes");
 const card = document.getElementById("card");
+const cat = document.getElementById("cat");
 const music = document.getElementById("music");
 
 let i = 0;
@@ -129,7 +140,7 @@ let noSpeed = 180;
   }
 })();
 
-// NO button escape (gets harder)
+// NO button escapes
 function moveNo() {
   const x = Math.random() * noSpeed;
   const y = Math.random() * 60;
@@ -141,15 +152,15 @@ function moveNo() {
 noBtn.addEventListener("mouseenter", moveNo);
 noBtn.addEventListener("click", moveNo);
 
-// YES click = payoff
+// YES click
 yesBtn.addEventListener("click", () => {
   music.play();
-  card.classList.add("blur");
 
   card.innerHTML = `
-    <h1>You chose YES 💘</h1>
-    <p>That’s all I needed to know.</p>
-    <p>❤️ Screenshot this moment ❤️</p>
+    <h1>You said YES 😍</h1>
+    <img class="cat" src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" />
+    <p>This just got purr-fect 🐾</p>
+    <p>❤️ Screenshot this ❤️</p>
   `;
 
   setInterval(() => {
