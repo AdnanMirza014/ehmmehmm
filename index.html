@@ -3,176 +3,229 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>One Question 💖</title>
+<title>Happy Birthday Ruqaiyya 🎂</title>
 
 <style>
-  * { box-sizing: border-box; }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-  body {
-    margin: 0;
-    height: 100vh;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-  }
+body{
+  height:100vh;
+  overflow:hidden;
+  font-family:'Segoe UI',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3a5);
+  position:relative;
+}
 
-  .card {
-    background: rgba(255,255,255,0.96);
-    padding: 35px 28px;
-    width: 340px;
-    border-radius: 24px;
-    text-align: center;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.25);
-    position: relative;
-    z-index: 2;
-  }
+/* Floating background glow */
+body::before{
+  content:'';
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:rgba(255,255,255,0.15);
+  border-radius:50%;
+  filter:blur(120px);
+  animation:floatGlow 8s ease-in-out infinite;
+}
 
-  h1 {
-    font-size: 22px;
-    color: #333;
-    min-height: 60px;
+@keyframes floatGlow{
+  0%,100%{
+    transform:translate(-100px,-80px);
   }
+  50%{
+    transform:translate(120px,100px);
+  }
+}
 
-  p {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
-  }
+.card{
+  width:360px;
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:28px;
+  padding:35px 28px;
+  text-align:center;
+  color:white;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+  position:relative;
+  z-index:5;
+  animation:fadeUp 1.2s ease;
+}
 
-  .cat {
-    width: 140px;
-    margin: 10px auto 20px;
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(40px);
   }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
-  .buttons {
-    position: relative;
-    height: 90px;
-  }
+h1{
+  font-size:34px;
+  margin-bottom:10px;
+}
 
-  button {
-    padding: 12px 26px;
-    font-size: 16px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.2s ease;
-  }
+.name{
+  font-size:28px;
+  font-weight:bold;
+  margin-bottom:20px;
+  color:#fff4f7;
+}
 
-  #yes {
-    background: linear-gradient(135deg, #ff4d6d, #ff758c);
-    color: white;
-    box-shadow: 0 10px 20px rgba(255,77,109,0.4);
-  }
+.message{
+  font-size:15px;
+  line-height:1.7;
+  color:#fff;
+  margin-bottom:25px;
+}
 
-  #yes:hover {
-    transform: scale(1.07);
-  }
+.cat{
+  width:140px;
+  border-radius:20px;
+  margin-bottom:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
 
-  #no {
-    background: #eee;
-    color: #444;
-    position: absolute;
-    left: 190px;
-    top: 0;
-  }
+button{
+  border:none;
+  padding:13px 26px;
+  border-radius:30px;
+  background:white;
+  color:#ff4d88;
+  font-weight:bold;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
 
-  .heart {
-    position: fixed;
-    bottom: -20px;
-    font-size: 22px;
-    animation: floatUp linear forwards;
-    pointer-events: none;
-  }
+button:hover{
+  transform:scale(1.08);
+}
 
-  @keyframes floatUp {
-    from { transform: translateY(0); opacity: 1; }
-    to { transform: translateY(-120vh); opacity: 0; }
+.heart{
+  position:absolute;
+  font-size:20px;
+  animation:floatUp linear forwards;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  from{
+    transform:translateY(0) scale(1);
+    opacity:1;
   }
+  to{
+    transform:translateY(-120vh) scale(1.6);
+    opacity:0;
+  }
+}
+
+.final-screen{
+  animation:fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:scale(0.8);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
 </style>
 </head>
 
 <body>
 
-<audio id="music" preload="auto">
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_45c8d7f9aa.mp3" type="audio/mpeg">
+<audio id="music">
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_45c8d7f9aa.mp3" type="audio/mp3">
 </audio>
 
 <div class="card" id="card">
-  <h1 id="question"></h1>
 
-  <!-- Cute Cat -->
-  <img
-    id="cat"
+  <h1>Happy Birthday 🎂</h1>
+
+  <div class="name">Ruqaiyya 💖</div>
+
+  <img 
     class="cat"
     src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
-    alt="cute cat"
-  />
+  >
 
-  <p>He’s rooting for you 👀</p>
-
-  <div class="buttons">
-    <button id="yes">Yes 💖</button>
-    <button id="no">No 🙄</button>
+  <div class="message">
+    Some people make life softer just by existing.<br><br>
+    I hope your smile never fades, your heart stays light,
+    and this year brings you moments worth remembering.
   </div>
+
+  <button id="surpriseBtn">
+    Open Your Surprise ✨
+  </button>
+
 </div>
 
 <script>
-const text = "Will you be my Valentine?";
-const q = document.getElementById("question");
-const noBtn = document.getElementById("no");
-const yesBtn = document.getElementById("yes");
+const btn = document.getElementById("surpriseBtn");
 const card = document.getElementById("card");
-const cat = document.getElementById("cat");
 const music = document.getElementById("music");
 
-let i = 0;
-let noSpeed = 180;
+btn.addEventListener("click", () => {
 
-// Typewriter effect
-(function type() {
-  if (i < text.length) {
-    q.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 70);
-  }
-})();
-
-// NO button escapes
-function moveNo() {
-  const x = Math.random() * noSpeed;
-  const y = Math.random() * 60;
-  noBtn.style.left = x + "px";
-  noBtn.style.top = y + "px";
-  noSpeed -= 15;
-}
-
-noBtn.addEventListener("mouseenter", moveNo);
-noBtn.addEventListener("click", moveNo);
-
-// YES click
-yesBtn.addEventListener("click", () => {
   music.play();
 
   card.innerHTML = `
-    <h1>You said YES 😍</h1>
-    <img class="cat" src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif" />
-    <p>This just got purr-fect 🐾</p>
-    <p>❤️ Screenshot this ❤️</p>
+    <div class="final-screen">
+      <h1>💖 Ruqaiyya 💖</h1>
+
+      <img
+      class="cat"
+      src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"
+      >
+
+      <div class="message">
+        You deserve happiness that feels genuine,
+        laughter that comes naturally,
+        and people who truly value you.<br><br>
+
+        Happy Birthday once again ✨
+      </div>
+    </div>
   `;
 
-  setInterval(() => {
-    const h = document.createElement("div");
-    h.className = "heart";
-    h.innerHTML = ["❤️","💖","💕","💘"][Math.floor(Math.random()*4)];
-    h.style.left = Math.random() * window.innerWidth + "px";
-    h.style.animationDuration = (3 + Math.random()*2) + "s";
-    document.body.appendChild(h);
-    setTimeout(() => h.remove(), 5000);
-  }, 200);
+  setInterval(createHeart,200);
 });
+
+function createHeart(){
+
+  const heart=document.createElement("div");
+  heart.classList.add("heart");
+
+  const emojis=["💖","✨","💕","🎂","💘"];
+
+  heart.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+  heart.style.left=Math.random()*window.innerWidth+"px";
+
+  heart.style.animationDuration=(3+Math.random()*3)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },6000);
+}
 </script>
 
 </body>
