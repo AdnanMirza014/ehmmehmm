@@ -6,6 +6,7 @@
 <title>Happy Birthday Ruqaiyya 🎂</title>
 
 <style>
+
 *{
   margin:0;
   padding:0;
@@ -23,7 +24,7 @@ body{
   position:relative;
 }
 
-/* Floating background glow */
+/* Background glow */
 body::before{
   content:'';
   position:absolute;
@@ -89,11 +90,14 @@ h1{
   margin-bottom:25px;
 }
 
-.cat{
-  width:140px;
-  border-radius:20px;
+/* Flower image */
+.flower{
+  width:220px;
+  height:220px;
+  object-fit:cover;
+  border-radius:24px;
   margin-bottom:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+  box-shadow:0 15px 35px rgba(0,0,0,0.25);
 }
 
 button{
@@ -144,6 +148,7 @@ button:hover{
     transform:scale(1);
   }
 }
+
 </style>
 </head>
 
@@ -159,9 +164,10 @@ button:hover{
 
   <div class="name">Ruqaiyya 💖</div>
 
+  <!-- Flower Image -->
   <img 
-    class="cat"
-    src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif"
+    class="flower"
+    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop"
   >
 
   <div class="message">
@@ -177,6 +183,7 @@ button:hover{
 </div>
 
 <script>
+
 const btn = document.getElementById("surpriseBtn");
 const card = document.getElementById("card");
 const music = document.getElementById("music");
@@ -187,11 +194,12 @@ btn.addEventListener("click", () => {
 
   card.innerHTML = `
     <div class="final-screen">
+
       <h1>💖 Ruqaiyya 💖</h1>
 
       <img
-      class="cat"
-      src="https://media.giphy.com/media/mlvseq9yvZhba/giphy.gif"
+      class="flower"
+      src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1200&auto=format&fit=crop"
       >
 
       <div class="message">
@@ -201,6 +209,7 @@ btn.addEventListener("click", () => {
 
         Happy Birthday once again ✨
       </div>
+
     </div>
   `;
 
@@ -212,7 +221,7 @@ function createHeart(){
   const heart=document.createElement("div");
   heart.classList.add("heart");
 
-  const emojis=["💖","✨","💕","🎂","💘"];
+  const emojis=["💖","✨","💕","🌸","💘"];
 
   heart.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
 
@@ -226,6 +235,7 @@ function createHeart(){
     heart.remove();
   },6000);
 }
+
 </script>
 
 </body>
