@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Happy Birthday Ruqaiyya 🎂</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Ruqaiyya 💖</title>
 
 <style>
 
@@ -16,29 +16,29 @@
 body{
   height:100vh;
   overflow:hidden;
-  font-family:'Segoe UI',sans-serif;
   display:flex;
   justify-content:center;
   align-items:center;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3a5);
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ff9eb5,#ffc2d1,#ffe5ec);
   position:relative;
 }
 
-/* Background Glow */
+/* soft animated glow */
 body::before{
   content:'';
   position:absolute;
   width:600px;
   height:600px;
-  background:rgba(255,255,255,0.15);
+  background:rgba(255,255,255,0.2);
   border-radius:50%;
   filter:blur(120px);
-  animation:floatGlow 8s ease-in-out infinite;
+  animation:glowMove 8s ease-in-out infinite;
 }
 
-@keyframes floatGlow{
+@keyframes glowMove{
   0%,100%{
-    transform:translate(-100px,-80px);
+    transform:translate(-100px,-50px);
   }
   50%{
     transform:translate(120px,100px);
@@ -47,17 +47,16 @@ body::before{
 
 .card{
   width:360px;
-  background:rgba(255,255,255,0.15);
+  padding:30px;
+  border-radius:28px;
+  background:rgba(255,255,255,0.18);
   backdrop-filter:blur(14px);
   border:1px solid rgba(255,255,255,0.25);
-  border-radius:28px;
-  padding:35px 28px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.18);
   text-align:center;
-  color:white;
-  box-shadow:0 20px 50px rgba(0,0,0,0.25);
   position:relative;
-  z-index:5;
-  animation:fadeUp 1.2s ease;
+  z-index:2;
+  animation:fadeUp 1s ease;
 }
 
 @keyframes fadeUp{
@@ -72,21 +71,22 @@ body::before{
 }
 
 h1{
+  color:white;
   font-size:34px;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 .name{
+  color:white;
   font-size:28px;
   font-weight:bold;
   margin-bottom:20px;
-  color:#fff4f7;
 }
 
 .message{
-  font-size:15px;
+  color:white;
   line-height:1.7;
-  color:#fff;
+  font-size:15px;
   margin-bottom:25px;
 }
 
@@ -96,7 +96,7 @@ h1{
   object-fit:cover;
   border-radius:24px;
   margin-bottom:20px;
-  box-shadow:0 15px 35px rgba(0,0,0,0.25);
+  box-shadow:0 10px 30px rgba(0,0,0,0.25);
 }
 
 button{
@@ -105,8 +105,8 @@ button{
   border-radius:30px;
   background:white;
   color:#ff4d88;
-  font-weight:bold;
   font-size:15px;
+  font-weight:bold;
   cursor:pointer;
   transition:0.3s;
 }
@@ -117,9 +117,9 @@ button:hover{
 
 .heart{
   position:absolute;
-  font-size:20px;
-  animation:floatUp linear forwards;
+  font-size:22px;
   pointer-events:none;
+  animation:floatUp linear forwards;
 }
 
 @keyframes floatUp{
@@ -133,27 +133,9 @@ button:hover{
   }
 }
 
-.final-screen{
-  animation:fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:scale(0.8);
-  }
-  to{
-    opacity:1;
-    transform:scale(1);
-  }
-}
-
-/* Video Styling */
 video{
   width:100%;
-  max-width:320px;
   border-radius:20px;
-  margin-top:20px;
   box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
@@ -162,25 +144,25 @@ video{
 
 <body>
 
-<audio id="music">
-  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_45c8d7f9aa.mp3" type="audio/mp3">
-</audio>
-
 <div class="card" id="card">
 
   <h1>Happy Birthday 🎂</h1>
 
-  <div class="name">Ruqaiyya 💖</div>
+  <div class="name">
+    💖 Ruqaiyya 💖
+  </div>
 
   <img 
     class="flower"
-    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop"
+    src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1200&auto=format&fit=crop"
   >
 
   <div class="message">
     Some people make life softer just by existing.<br><br>
-    I hope your smile never fades, your heart stays light,
-    and this year brings you moments worth remembering.
+
+    I hope your smile never fades,
+    your heart stays light,
+    and this year brings you beautiful memories ✨
   </div>
 
   <button id="surpriseBtn">
@@ -193,43 +175,38 @@ video{
 
 const btn = document.getElementById("surpriseBtn");
 const card = document.getElementById("card");
-const music = document.getElementById("music");
 
 btn.addEventListener("click", () => {
 
-  music.play();
+  card.innerHTML = `
 
-  card.innerHTML =  `
-  <div class="final-screen">
+    <div class="final-screen">
 
-    <h1 style="margin-bottom:20px;">
-      💖 Happy Birthday Ruqaiyya 💖
-    </h1>
+      <h1 style="margin-bottom:20px;">
+        💖 Happy Birthday Ruqaiyya 💖
+      </h1>
 
-    <video 
-      controls 
-      autoplay 
-      muted
-      playsinline
-      style="
-        width:100%;
-        border-radius:20px;
-        box-shadow:0 10px 30px rgba(0,0,0,0.3);
-      "
-    >
-      <source src="1000061711.mp4" type="video/mp4">
-    </video>
+      <video
+        controls
+        autoplay
+        muted
+        playsinline
+      >
+        <source src="1000061711.mp4" type="video/mp4">
+      </video>
 
-  </div>';
+    </div>
 
-    
+  `;
 
   setInterval(createHeart,200);
+
 });
 
 function createHeart(){
 
   const heart=document.createElement("div");
+
   heart.classList.add("heart");
 
   const emojis=["💖","✨","💕","🌸","💘"];
@@ -245,6 +222,7 @@ function createHeart(){
   setTimeout(()=>{
     heart.remove();
   },6000);
+
 }
 
 </script>
