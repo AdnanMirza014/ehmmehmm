@@ -199,22 +199,29 @@ btn.addEventListener("click", () => {
 
   music.play();
 
-  card.innerHTML = `
-    <div class="final-screen">
+  card.innerHTML =  `
+  <div class="final-screen">
 
-      <h1>💖 Ruqaiyya 💖</h1>
+    <h1 style="margin-bottom:20px;">
+      💖 Happy Birthday Ruqaiyya 💖
+    </h1>
 
-      <img
-      class="flower"
-      src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=1200&auto=format&fit=crop"
-      >
+    <video 
+      controls 
+      autoplay 
+      muted
+      playsinline
+      style="
+        width:100%;
+        border-radius:20px;
+        box-shadow:0 10px 30px rgba(0,0,0,0.3);
+      "
+    >
+      <source src="1000061711.mp4" type="video/mp4">
+    </video>
 
-      <div class="message">
-        You deserve happiness that feels genuine,
-        laughter that comes naturally,
-        and people who truly value you.<br><br>
-
-        Happy Birthday once again ✨
+  </div>
+`;
       </div>
 
       <!-- VIDEO -->
